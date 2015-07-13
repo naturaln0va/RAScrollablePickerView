@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ColorPickerExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,82 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDo-VY-kvG" customClass="RAScrollablePickerView" customModule="ColorPickerExample" customModuleProvider="target">
+                                <rect key="frame" x="16" y="434" width="568" height="75"/>
+                                <color key="backgroundColor" white="0.98026315789473684" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="rot-IG-e2K"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="rot-IG-e2K"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sM2-Xd-9Eh" customClass="RAScrollablePickerView" customModule="ColorPickerExample" customModuleProvider="target">
+                                <rect key="frame" x="16" y="517" width="568" height="75"/>
+                                <color key="backgroundColor" white="0.98026315789999996" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Ob5-hO-7TW"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Ob5-hO-7TW"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F0O-Hv-xTL" customClass="RAScrollablePickerView" customModule="ColorPickerExample" customModuleProvider="target">
+                                <rect key="frame" x="16" y="351" width="568" height="75"/>
+                                <color key="backgroundColor" white="0.98026315789999996" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="nDD-dg-pNJ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kec-mI-ceI">
+                                <rect key="frame" x="139" y="20" width="323" height="323"/>
+                                <color key="backgroundColor" white="0.98549717978427287" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Kec-mI-ceI" secondAttribute="height" multiplier="1:1" id="ECi-NC-Akb"/>
+                                    <constraint firstAttribute="height" constant="313" id="Swc-eC-WOc"/>
+                                    <constraint firstAttribute="width" constant="313" id="d1U-YF-xdN"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Swc-eC-WOc"/>
+                                        <exclude reference="d1U-YF-xdN"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Kec-mI-ceI" secondAttribute="centerX" id="3fj-Nw-K22"/>
+                            <constraint firstItem="F0O-Hv-xTL" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Aqh-Sg-YpL"/>
+                            <constraint firstItem="Kec-mI-ceI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="FRr-35-43d"/>
+                            <constraint firstItem="yDo-VY-kvG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="G5A-vW-ppx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sM2-Xd-9Eh" secondAttribute="bottom" constant="8" id="Htu-Sl-aNr"/>
+                            <constraint firstItem="sM2-Xd-9Eh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="MdG-RX-YVU"/>
+                            <constraint firstItem="F0O-Hv-xTL" firstAttribute="top" secondItem="Kec-mI-ceI" secondAttribute="bottom" constant="8" id="Mtt-AA-0GH"/>
+                            <constraint firstItem="sM2-Xd-9Eh" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Ob1-qX-gta"/>
+                            <constraint firstItem="yDo-VY-kvG" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Qi7-eJ-901"/>
+                            <constraint firstItem="yDo-VY-kvG" firstAttribute="top" secondItem="F0O-Hv-xTL" secondAttribute="bottom" constant="8" id="RaF-wt-BOc"/>
+                            <constraint firstItem="sM2-Xd-9Eh" firstAttribute="top" secondItem="yDo-VY-kvG" secondAttribute="bottom" constant="8" id="gbJ-bK-N1O"/>
+                            <constraint firstItem="F0O-Hv-xTL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gqS-mE-Ckg"/>
+                            <constraint firstItem="F0O-Hv-xTL" firstAttribute="height" secondItem="sM2-Xd-9Eh" secondAttribute="height" id="xkF-be-ARr"/>
+                            <constraint firstItem="yDo-VY-kvG" firstAttribute="height" secondItem="F0O-Hv-xTL" secondAttribute="height" id="yK6-Kw-Lcc"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="brightnessPicker" destination="sM2-Xd-9Eh" id="eGz-u1-aGu"/>
+                        <outlet property="colorPreView" destination="Kec-mI-ceI" id="fbD-qg-u0T"/>
+                        <outlet property="huePicker" destination="F0O-Hv-xTL" id="emw-kQ-srd"/>
+                        <outlet property="saturationPicker" destination="yDo-VY-kvG" id="7rN-em-bXK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="115" y="385"/>
         </scene>
     </scenes>
 </document>

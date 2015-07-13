@@ -7,46 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6908F4291B500AE500A410E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6908F4281B500AE500A410E2 /* AppDelegate.swift */; };
+		6908F4291B500AE500A410E2 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6908F4281B500AE500A410E2 /* WindowController.swift */; };
 		6908F42B1B500AE500A410E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6908F42A1B500AE500A410E2 /* ViewController.swift */; };
 		6908F42E1B500AE500A410E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6908F42C1B500AE500A410E2 /* Main.storyboard */; };
 		6908F4301B500AE500A410E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6908F42F1B500AE500A410E2 /* Images.xcassets */; };
 		6908F4331B500AE500A410E2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6908F4311B500AE500A410E2 /* LaunchScreen.xib */; };
-		6908F43F1B500AE500A410E2 /* ColorPickerExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6908F43E1B500AE500A410E2 /* ColorPickerExampleTests.swift */; };
+		6908F4491B500BC000A410E2 /* RAScrollablePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6908F4481B500BC000A410E2 /* RAScrollablePickerView.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		6908F4391B500AE500A410E2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6908F41B1B500AE500A410E2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6908F4221B500AE500A410E2;
-			remoteInfo = ColorPickerExample;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6908F4231B500AE500A410E2 /* ColorPickerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorPickerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6908F4271B500AE500A410E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6908F4281B500AE500A410E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6908F4281B500AE500A410E2 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		6908F42A1B500AE500A410E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6908F42D1B500AE500A410E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6908F42F1B500AE500A410E2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6908F4321B500AE500A410E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		6908F4381B500AE500A410E2 /* ColorPickerExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorPickerExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6908F43D1B500AE500A410E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6908F43E1B500AE500A410E2 /* ColorPickerExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerExampleTests.swift; sourceTree = "<group>"; };
+		6908F4481B500BC000A410E2 /* RAScrollablePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAScrollablePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6908F4201B500AE500A410E2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6908F4351B500AE500A410E2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -60,7 +41,6 @@
 			isa = PBXGroup;
 			children = (
 				6908F4251B500AE500A410E2 /* ColorPickerExample */,
-				6908F43B1B500AE500A410E2 /* ColorPickerExampleTests */,
 				6908F4241B500AE500A410E2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,7 +49,6 @@
 			isa = PBXGroup;
 			children = (
 				6908F4231B500AE500A410E2 /* ColorPickerExample.app */,
-				6908F4381B500AE500A410E2 /* ColorPickerExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,11 +56,10 @@
 		6908F4251B500AE500A410E2 /* ColorPickerExample */ = {
 			isa = PBXGroup;
 			children = (
-				6908F4281B500AE500A410E2 /* AppDelegate.swift */,
+				6908F4281B500AE500A410E2 /* WindowController.swift */,
 				6908F42A1B500AE500A410E2 /* ViewController.swift */,
+				6908F4481B500BC000A410E2 /* RAScrollablePickerView.swift */,
 				6908F42C1B500AE500A410E2 /* Main.storyboard */,
-				6908F42F1B500AE500A410E2 /* Images.xcassets */,
-				6908F4311B500AE500A410E2 /* LaunchScreen.xib */,
 				6908F4261B500AE500A410E2 /* Supporting Files */,
 			);
 			path = ColorPickerExample;
@@ -90,24 +68,9 @@
 		6908F4261B500AE500A410E2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6908F42F1B500AE500A410E2 /* Images.xcassets */,
+				6908F4311B500AE500A410E2 /* LaunchScreen.xib */,
 				6908F4271B500AE500A410E2 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		6908F43B1B500AE500A410E2 /* ColorPickerExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				6908F43E1B500AE500A410E2 /* ColorPickerExampleTests.swift */,
-				6908F43C1B500AE500A410E2 /* Supporting Files */,
-			);
-			path = ColorPickerExampleTests;
-			sourceTree = "<group>";
-		};
-		6908F43C1B500AE500A410E2 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				6908F43D1B500AE500A410E2 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -132,24 +95,6 @@
 			productReference = 6908F4231B500AE500A410E2 /* ColorPickerExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6908F4371B500AE500A410E2 /* ColorPickerExampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6908F4451B500AE500A410E2 /* Build configuration list for PBXNativeTarget "ColorPickerExampleTests" */;
-			buildPhases = (
-				6908F4341B500AE500A410E2 /* Sources */,
-				6908F4351B500AE500A410E2 /* Frameworks */,
-				6908F4361B500AE500A410E2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6908F43A1B500AE500A410E2 /* PBXTargetDependency */,
-			);
-			name = ColorPickerExampleTests;
-			productName = ColorPickerExampleTests;
-			productReference = 6908F4381B500AE500A410E2 /* ColorPickerExampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -161,10 +106,7 @@
 				TargetAttributes = {
 					6908F4221B500AE500A410E2 = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					6908F4371B500AE500A410E2 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 6908F4221B500AE500A410E2;
+						DevelopmentTeam = WK4Y48HVH2;
 					};
 				};
 			};
@@ -182,7 +124,6 @@
 			projectRoot = "";
 			targets = (
 				6908F4221B500AE500A410E2 /* ColorPickerExample */,
-				6908F4371B500AE500A410E2 /* ColorPickerExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -198,13 +139,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6908F4361B500AE500A410E2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -212,28 +146,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6908F4491B500BC000A410E2 /* RAScrollablePickerView.swift in Sources */,
 				6908F42B1B500AE500A410E2 /* ViewController.swift in Sources */,
-				6908F4291B500AE500A410E2 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6908F4341B500AE500A410E2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6908F43F1B500AE500A410E2 /* ColorPickerExampleTests.swift in Sources */,
+				6908F4291B500AE500A410E2 /* WindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		6908F43A1B500AE500A410E2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6908F4221B500AE500A410E2 /* ColorPickerExample */;
-			targetProxy = 6908F4391B500AE500A410E2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6908F42C1B500AE500A410E2 /* Main.storyboard */ = {
@@ -342,9 +261,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ColorPickerExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -352,43 +274,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ColorPickerExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		6908F4461B500AE500A410E2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ColorPickerExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ColorPickerExample.app/ColorPickerExample";
-			};
-			name = Debug;
-		};
-		6908F4471B500AE500A410E2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ColorPickerExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ColorPickerExample.app/ColorPickerExample";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -411,14 +302,7 @@
 				6908F4441B500AE500A410E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		6908F4451B500AE500A410E2 /* Build configuration list for PBXNativeTarget "ColorPickerExampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6908F4461B500AE500A410E2 /* Debug */,
-				6908F4471B500AE500A410E2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
