@@ -5,39 +5,36 @@
 
 import UIKit
 
-class ViewController: UIViewController, RAScrollablePickerViewDelegate
-{
+class ViewController: UIViewController, RAScrollablePickerViewDelegate {
     @IBOutlet weak var colorPreView: UIView!
     @IBOutlet weak var huePicker: RAScrollablePickerView!
     @IBOutlet weak var saturationPicker: RAScrollablePickerView!
     @IBOutlet weak var brightnessPicker: RAScrollablePickerView!
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
         huePicker.delegate = self
         
         saturationPicker.delegate = self
-        saturationPicker.type = .Saturation
+        saturationPicker.type = .saturation
         saturationPicker.hueValueForPreview = huePicker.value
         
         brightnessPicker.delegate = self
-        brightnessPicker.type = .Brightness
+        brightnessPicker.type = .brightness
         brightnessPicker.hueValueForPreview = huePicker.value
         
         colorPreView.backgroundColor = UIColor(hue: huePicker.value, saturation: saturationPicker.value, brightness: brightnessPicker.value, alpha: 1)
     }
     
-    func valueChanged(value: CGFloat, type: PickerType)
-    {
+    func valueChanged(_ value: CGFloat, type: PickerType) {
         switch(type) {
-        case .Hue:
+        case .hue:
             colorPreView.backgroundColor = UIColor(hue: value, saturation: saturationPicker.value, brightness: brightnessPicker.value, alpha: 1)
             saturationPicker.hueValueForPreview = value
             brightnessPicker.hueValueForPreview = value
-        case .Saturation:
+        case .saturation:
             colorPreView.backgroundColor = UIColor(hue: huePicker.value, saturation: value, brightness: brightnessPicker.value, alpha: 1)
-        case .Brightness:
+        case .brightness:
             colorPreView.backgroundColor = UIColor(hue: huePicker.value, saturation: saturationPicker.value, brightness: value, alpha: 1)
         }
     }
