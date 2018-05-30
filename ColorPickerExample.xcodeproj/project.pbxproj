@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		48B5AEB11DF860EA0072169D /* RAScrollablePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B5AEB01DF860EA0072169D /* RAScrollablePickerView.swift */; };
+		48A9BFBF20BED26800AC149A /* RAScrollablePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A9BFBE20BED26800AC149A /* RAScrollablePickerView.swift */; };
 		6908F4291B500AE500A410E2 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6908F4281B500AE500A410E2 /* WindowController.swift */; };
 		6908F42B1B500AE500A410E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6908F42A1B500AE500A410E2 /* ViewController.swift */; };
 		6908F42E1B500AE500A410E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6908F42C1B500AE500A410E2 /* Main.storyboard */; };
@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		48B5AEB01DF860EA0072169D /* RAScrollablePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAScrollablePickerView.swift; sourceTree = "<group>"; };
+		48A9BFBE20BED26800AC149A /* RAScrollablePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAScrollablePickerView.swift; sourceTree = SOURCE_ROOT; };
 		6908F4231B500AE500A410E2 /* ColorPickerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorPickerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6908F4271B500AE500A410E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6908F4281B500AE500A410E2 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				6908F42A1B500AE500A410E2 /* ViewController.swift */,
-				48B5AEB01DF860EA0072169D /* RAScrollablePickerView.swift */,
+				48A9BFBE20BED26800AC149A /* RAScrollablePickerView.swift */,
 				6908F4261B500AE500A410E2 /* Supporting Files */,
 			);
 			path = ColorPickerExample;
@@ -148,7 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6908F42B1B500AE500A410E2 /* ViewController.swift in Sources */,
-				48B5AEB11DF860EA0072169D /* RAScrollablePickerView.swift in Sources */,
+				48A9BFBF20BED26800AC149A /* RAScrollablePickerView.swift in Sources */,
 				6908F4291B500AE500A410E2 /* WindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
