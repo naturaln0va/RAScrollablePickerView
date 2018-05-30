@@ -28,7 +28,9 @@ protocol RAScrollablePickerViewDelegate: class {
 }
 
 class RAScrollablePickerView: UIView {
+    
     var type: PickerType = .hue
+    var shouldDecelerate = true
     weak var delegate: RAScrollablePickerViewDelegate?
     
     var hueValueForPreview: CGFloat = 1.0 {
@@ -149,7 +151,7 @@ class RAScrollablePickerView: UIView {
             }
             lastTouchLocation = gesture.location(in: self)
         }
-        else if gesture.state == .ended || gesture.state == .cancelled {
+        else if (gesture.state == .ended || gesture.state == .cancelled) && shouldDecelerate {
             decelerationSpeed = gesture.velocity(in: self).x
         }
     }
