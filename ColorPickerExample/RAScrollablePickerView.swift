@@ -88,19 +88,15 @@ class RAScrollablePickerView: UIView {
     private func colors(for value: CGFloat) -> [CGColor] {
         var result = [CGColor]()
         var colors = [CGFloat]()
-        var padding: CGFloat = 0.0
         
-        if type != .hue {
-            padding = 0.7
-        }
-        else {
-            padding = 0.135
-        }
+        let padding: CGFloat = type == .hue ? 0.04 : 0.5
         
+        colors.append(value - (padding * 2))
         colors.append(value - padding)
         colors.append(value)
         colors.append(value + padding)
-        
+        colors.append(value + (padding * 2))
+
         for index in 0..<colors.count {
             let color = colors[index]
             var colorValue: CGFloat
@@ -188,7 +184,7 @@ class RAScrollablePickerView: UIView {
     override func draw(_ rect: CGRect) {
         let ctx = UIGraphicsGetCurrentContext()
         
-        if let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: colors(for: value) as CFArray, locations: [0, 0.5, 1]) {
+        if let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: colors(for: value) as CFArray, locations: [0, 0.25, 0.5, 0.75, 1]) {
             ctx?.drawLinearGradient(gradient, start: CGPoint(x: rect.size.width, y: 0), end: CGPoint.zero, options: .drawsBeforeStartLocation)
         }
         
