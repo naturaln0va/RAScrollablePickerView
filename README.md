@@ -1,4 +1,5 @@
-# RAScrollablePickerView
+![RAScrollablePickerView](https://github.com/Tobaloidee/RAScrollablePickerView/blob/master/logo/logotype.png)
+
 Lightweight HSB color picker view in Swift.
 
 ![Preview](https://github.com/naturaln0va/RAScrollablePickerView/blob/master/RAScrollablePickerView.gif)
