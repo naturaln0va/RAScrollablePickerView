@@ -2,9 +2,11 @@
   <img src="logo/logotype.png" style="max-height: 250px;" alt="RAScrollablePickerView">
 </p>
 
-Lightweight HSB color picker view in Swift.
+<p align="center">
+  <img src="RAScrollablePickerView.gif" style="max-height: 160px;" alt="Preview">
+</p>
 
-![Preview](https://github.com/naturaln0va/RAScrollablePickerView/blob/master/RAScrollablePickerView.gif)
+> Lightweight HSB color picker view in Swift.
 
 ## Usage
 Just drop `RAScrollablePickerView` in your project.
