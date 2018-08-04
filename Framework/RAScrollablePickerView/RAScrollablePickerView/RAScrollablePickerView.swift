@@ -57,31 +57,35 @@ public class RAScrollablePickerView: UIView {
         return UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
     }()
     
-    private(set) var value: CGFloat = 0.5 {
+    public var value: CGFloat {
+        return pickerValue
+    }
+    
+    private var pickerValue: CGFloat = 0.5 {
         didSet {
             if type != .hue {
-                if self.value > 1 {
-                    self.value = 1
+                if self.pickerValue > 1 {
+                    self.pickerValue = 1
                 }
-                else if self.value < 0 {
-                    self.value = 0
+                else if self.pickerValue < 0 {
+                    self.pickerValue = 0
                 }
                 else {
                     setNeedsDisplay()
                 }
             }
             else {
-                if self.value > 1 {
-                    self.value -= 1
+                if self.pickerValue > 1 {
+                    self.pickerValue -= 1
                 }
-                else if self.value < 0 {
-                    self.value += 1
+                else if self.pickerValue < 0 {
+                    self.pickerValue += 1
                 }
                 else {
                     setNeedsDisplay()
                 }
             }
-            delegate?.valueChanged(self.value, type: type)
+            delegate?.valueChanged(pickerValue, type: type)
         }
     }
     
@@ -143,7 +147,7 @@ public class RAScrollablePickerView: UIView {
         }
         else if gesture.state == .changed {
             if let location = lastTouchLocation {
-                value += (gesture.location(in: self).x - location.x) / frame.width
+                pickerValue += (gesture.location(in: self).x - location.x) / frame.width
             }
             lastTouchLocation = gesture.location(in: self)
         }
@@ -162,7 +166,7 @@ public class RAScrollablePickerView: UIView {
             return
         }
         
-        value += (decelerationSpeed * 0.025) / 100
+        pickerValue += (decelerationSpeed * 0.025) / 100
     }
     
     private func commonInit() {
