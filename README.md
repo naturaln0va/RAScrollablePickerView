@@ -8,8 +8,33 @@
 
 > Lightweight HSB color picker view in Swift.
 
+## Install
+### Carthage
+
+Add the following to your Cartfile:
+```
+github "naturaln0va/RAScrollablePickerView"
+```
+
+The build the Cartfile:
+
+```
+carthage update --platform iOS
+```
+
+Then drag `Carthage/Build/iOS/RAScrollablePickerView.framework` into your Xcode project.
+
+Finally add the import:
+
+```
+import RAScrollablePickerView
+```
+
+### Manual
+
+Just drop `Framework/RAScrollablePickerView/RAScrollablePickerView/RAScrollablePickerView.swift` in your project.
+
 ## Usage
-Just drop `RAScrollablePickerView` in your project.
 
 Then create 3 instances of the scrollable picker view and assign each a different type.
 ``` swift
@@ -46,4 +71,4 @@ func valueChanged(_ value: CGFloat, type: PickerType) {
 Feel free the reach out to me if you have an questions.
 
 - https://twitter.com/naturaln0va
-- http://ackermann.io
+- https://ackermann.io
