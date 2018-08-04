@@ -17,23 +17,23 @@
 
 import UIKit
 
-enum PickerType: Int {
+public enum PickerType: Int {
     case hue
     case saturation
     case brightness
 }
 
-protocol RAScrollablePickerViewDelegate: class {
+public protocol RAScrollablePickerViewDelegate: class {
     func valueChanged(_ value: CGFloat, type: PickerType)
 }
 
-class RAScrollablePickerView: UIView {
+public class RAScrollablePickerView: UIView {
     
-    var type: PickerType = .hue
-    var shouldDecelerate = true
-    weak var delegate: RAScrollablePickerViewDelegate?
+    public var type: PickerType = .hue
+    public var shouldDecelerate = true
+    public weak var delegate: RAScrollablePickerViewDelegate?
     
-    var hueValueForPreview: CGFloat = 1.0 {
+    public var hueValueForPreview: CGFloat = 1.0 {
         didSet {
             setNeedsDisplay()
         }
@@ -171,17 +171,17 @@ class RAScrollablePickerView: UIView {
         clipsToBounds = true
     }
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
     
-    override func draw(_ rect: CGRect) {
+    public override func draw(_ rect: CGRect) {
         let ctx = UIGraphicsGetCurrentContext()
         
         if let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: colors(for: value) as CFArray, locations: [0, 0.25, 0.5, 0.75, 1]) {
