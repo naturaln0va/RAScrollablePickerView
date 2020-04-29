@@ -35,7 +35,7 @@ class ViewController: UIViewController, RAScrollablePickerViewDelegate {
     }
     
     func valueChanged(_ value: CGFloat, type: PickerType) {
-        switch(type) {
+        switch type {
         case .hue:
             colorPreView.backgroundColor = UIColor(hue: value, saturation: saturationPicker.value, brightness: brightnessPicker.value, alpha: 1)
             saturationPicker.hueValueForPreview = value
