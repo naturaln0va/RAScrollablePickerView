@@ -13,6 +13,7 @@ class ViewController: UIViewController, RAScrollablePickerViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         huePicker.delegate = self
         
         saturationPicker.delegate = self
