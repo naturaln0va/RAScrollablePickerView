@@ -53,7 +53,7 @@ Finally make sure the parent view/viewcontroller conforms to RAScrollablePickerV
 
 ``` swift
 func valueChanged(_ value: CGFloat, type: PickerType) {
-    switch(type) {
+    switch type {
     case .hue:
         colorPreView.backgroundColor = UIColor(hue: value, saturation: saturationPicker.value, brightness: brightnessPicker.value, alpha: 1)
         saturationPicker.hueValueForPreview = value
@@ -64,6 +64,15 @@ func valueChanged(_ value: CGFloat, type: PickerType) {
         colorPreView.backgroundColor = UIColor(hue: huePicker.value, saturation: saturationPicker.value, brightness: value, alpha: 1)
     }
 }
+```
+
+### Update a picker with a color
+
+```swift
+let colors: [UIColor] = [.systemBlue, .systemOrange, .systemYellow]
+let startColor = colors.randomElement() ?? .systemPink
+
+picker.set(color: startColor)
 ```
 
 ## Contact
