@@ -29,11 +29,9 @@ public protocol RAScrollablePickerViewDelegate: class {
 
 public class RAScrollablePickerView: UIView {
     
-    public var type: PickerType = .hue
-    public var shouldDecelerate = true
     public weak var delegate: RAScrollablePickerViewDelegate?
     
-    public var hueValueForPreview: CGFloat = 1.0 {
+    public var hueValueForPreview: CGFloat = 1 {
         didSet {
             setNeedsDisplay()
         }
@@ -42,7 +40,7 @@ public class RAScrollablePickerView: UIView {
     private var lastTouchLocation: CGPoint?
     private var decelerateTimer: Timer?
     
-    private var decelerationSpeed: CGFloat = 0.0 {
+    private var decelerationSpeed: CGFloat = 0 {
         didSet {
             if let timer = decelerateTimer {
                 if timer.isValid {
@@ -64,27 +62,28 @@ public class RAScrollablePickerView: UIView {
     private var pickerValue: CGFloat = 0.5 {
         didSet {
             if type != .hue {
-                if self.pickerValue > 1 {
-                    self.pickerValue = 1
+                if pickerValue > 1 {
+                    pickerValue = 1
                 }
-                else if self.pickerValue < 0 {
-                    self.pickerValue = 0
+                else if pickerValue < 0 {
+                    pickerValue = 0
                 }
                 else {
                     setNeedsDisplay()
                 }
             }
             else {
-                if self.pickerValue > 1 {
-                    self.pickerValue -= 1
+                if pickerValue > 1 {
+                    pickerValue -= 1
                 }
-                else if self.pickerValue < 0 {
-                    self.pickerValue += 1
+                else if pickerValue < 0 {
+                    pickerValue += 1
                 }
                 else {
                     setNeedsDisplay()
                 }
             }
+            
             delegate?.valueChanged(pickerValue, type: type)
         }
     }
@@ -128,7 +127,7 @@ public class RAScrollablePickerView: UIView {
                 }
             }
             
-            switch(type) {
+            switch type {
             case .hue:
                 result.append(UIColor(hue: colorValue, saturation: 1.0, brightness: 1.0, alpha: 1.0).cgColor)
             case .saturation:
@@ -139,6 +138,67 @@ public class RAScrollablePickerView: UIView {
         }
         
         return result
+    }
+    
+    public var type: PickerType
+    public var shouldDecelerate: Bool
+
+    init(type: PickerType, shouldDecelerate: Bool = true, color: UIColor? = nil) {
+        self.type = type
+        self.shouldDecelerate = shouldDecelerate
+        
+        super.init(frame: .zero)
+
+        commonInit()
+        
+        guard let initialColor = color else {
+            return
+        }
+        
+        set(color: initialColor)
+    }
+        
+    public override init(frame: CGRect) {
+        type = .hue
+        shouldDecelerate = true
+
+        super.init(frame: frame)
+                
+        commonInit()
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        type = .hue
+        shouldDecelerate = true
+
+        super.init(coder: aDecoder)
+        
+        commonInit()
+    }
+    
+    private func commonInit() {
+        addGestureRecognizer(panGesture)
+        layer.cornerRadius = 5.0
+        clipsToBounds = true
+    }
+    
+    public func set(color: UIColor) {
+        var hue: CGFloat = 0
+        var brightness: CGFloat = 0
+        var saturation: CGFloat = 0
+        
+        color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: nil)
+
+        switch type {
+        case .hue:
+            pickerValue = hue
+            
+        case .saturation:
+            pickerValue = saturation
+            
+        case .brightness:
+            pickerValue = brightness
+        }
     }
     
     @objc private func handlePan(_ gesture: UIPanGestureRecognizer) {
@@ -168,23 +228,7 @@ public class RAScrollablePickerView: UIView {
         
         pickerValue += (decelerationSpeed * 0.025) / 100
     }
-    
-    private func commonInit() {
-        addGestureRecognizer(panGesture)
-        layer.cornerRadius = 5.0
-        clipsToBounds = true
-    }
-    
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        commonInit()
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commonInit()
-    }
-    
+        
     public override func draw(_ rect: CGRect) {
         let ctx = UIGraphicsGetCurrentContext()
         
